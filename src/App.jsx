@@ -8,6 +8,7 @@ import Contact from "./pages/contact/Contact";
 import NavBar from "./layouts/NavBar";
 import "./App.css";
 
+const App = ()=>{
   return (
     <>
       <NavBar />
@@ -21,6 +22,7 @@ import "./App.css";
       {/* /================================================== */}
     </>
   );
+
 }
 
 export default App;
