@@ -1,4 +1,6 @@
-import React from 'react'
+import React from "react";
+import { useState, useEffect } from "react";
+import axiosClient from "../../api/axios";
 
 const Home = () => {
   return (
@@ -6,4 +8,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;

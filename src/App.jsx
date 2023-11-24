@@ -6,8 +6,11 @@ import Menu from "./pages/menu/Menu";
 import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
 import NavBar from "./layouts/NavBar";
-import "./App.css";
+// import "./App.css";
 
+import React from "react";
+
+const App = () => {
   return (
     <>
       <NavBar />
@@ -21,6 +24,6 @@ import "./App.css";
       {/* /================================================== */}
     </>
   );
-}
+};
 
 export default App;
