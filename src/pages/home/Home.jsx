@@ -4,7 +4,7 @@ import axiosClient from "../../api/axios";
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div className='font font-montserrat'>Home</div>
   )
 }
 

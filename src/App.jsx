@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { Button } from "./components/ui/button";
 import { Routes, Route } from "react-router-dom";
@@ -8,9 +9,7 @@ import Contact from "./pages/contact/Contact";
 import NavBar from "./layouts/NavBar";
 // import "./App.css";
 
-import React from "react";
-
-const App = () => {
+const App = ()=>{
   return (
     <>
       <NavBar />
@@ -24,6 +23,7 @@ const App = () => {
       {/* /================================================== */}
     </>
   );
-};
 
-export default App;
+}
+
+export default App

@@ -8,6 +8,13 @@ module.exports = {
     './src/**/*.{js,jsx}',
 	],
   theme: {
+    fontFamily: {
+      baskerville: ["Baskerville", "sans-serif"],
+      baskerville_b: ["Baskerville-b", "sans-serif"],
+      montserrat: ["Montserrat", "sans-serif"],
+      montserrat_l: ["Montserrat-l", "sans-serif"],
+      montserrat_b: ["Montserrat-b", "sans-serif"],
+    },
     container: {
       center: true,
       padding: "2rem",
@@ -17,6 +24,10 @@ module.exports = {
     },
     extend: {
       colors: {
+        subtext : '#929ea2',
+        lightGreen : '#dee3df',
+        auxiliary : '#ff9484',
+        main : '#295147',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
