@@ -24,6 +24,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        button:'#e63019',
         subtext : '#929ea2',
         lightGreen : '#dee3df',
         auxiliary : '#ff9484',
