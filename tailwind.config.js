@@ -28,6 +28,7 @@ module.exports = {
         lightGreen : '#dee3df',
         auxiliary : '#ff9484',
         main : '#295147',
+        'light-orange': '#fbf1f9',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

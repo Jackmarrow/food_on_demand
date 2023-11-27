@@ -1,15 +1,16 @@
-import React from 'react'
-import pizza from '../../pizza1.png'
-import FlyingButton from 'react-flying-item'
-import toast, { Toaster } from 'react-hot-toast'
-const notify = () => toast.success('Here is your toast.');
+import React from "react";
+import FlyingButton from "react-flying-item";
+import toast, { Toaster } from "react-hot-toast";
+import axiosClient from "../../api/axios";
+import { useState, useEffect} from "react";
+const notify = () => toast.success("Here is your toast.");
 
 const Menu = () => {
   return (
     <>
-    <div>Menu</div>
+      <div>Menu</div>
     </>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;

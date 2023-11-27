@@ -1,11 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import axiosClient from "../../api/axios";
+import HeroSection from "./components/HeroSection";
+import TopDishes from "./components/TopDishes";
 
 const Home = () => {
+
   return (
-    <div className='font font-montserrat'>Home</div>
-  )
-}
+    <>
+      <HeroSection />
+      <TopDishes />
+    </>
+  );
+};
 
 export default Home;
