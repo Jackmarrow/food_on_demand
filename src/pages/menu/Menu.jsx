@@ -19,7 +19,7 @@ const Menu = () => {
   const [menus, setMenus] = useState([]);
   const [Category, setCategory] = useState([]);
   const [sizes, setSizes] = useState([]);
-  console.log(sizes);
+  console.log(menus);
   const getmenu = async (value) => {
     try {
       const response = await axiosClient.get('/api/menus');
@@ -50,10 +50,10 @@ const Menu = () => {
                         <p className='text-center'>{menu.name}</p>
                         <p className='text-center'>{menu.desc.slice(0, 100)}...</p>
                         {
-                          sizes.some(size => size.menu_id === menu.id) ? (
+                          menu.sizes.length > 0 || menu.ingredients.length > 0  ? (
                             <>
                               <Dialog>
-                                <DialogTrigger asChild><Button className='bg-button my-5'>Add to Cart {menu.price} $</Button></DialogTrigger>
+                                <DialogTrigger asChild><Button className='bg-button my-5'>Add to Cart {menu.price} $ (extra) </Button></DialogTrigger>
                                 <DialogContent>
                                   <DialogHeader>
                                     <DialogTitle>Are you sure absolutely sure?</DialogTitle>
