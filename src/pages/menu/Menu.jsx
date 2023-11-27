@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import FlyingButton from 'react-flying-item'
 import toast, { Toaster } from 'react-hot-toast'
-import { axiosClient } from '../../api/axios';
+import axiosClient from '../../api/axios';
 import { Button } from '../../components/ui/button';
 import {
   Dialog,
@@ -84,7 +84,7 @@ const Menu = () => {
 
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;

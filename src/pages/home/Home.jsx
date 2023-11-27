@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import { useState, useEffect } from "react";
+import HeroSection from "./components/HeroSection";
+import TopDishes from "./components/TopDishes";
 
 const Home = () => {
-  return (
-    <div className='font font-montserrat'>Home</div>
-  )
-}
 
-export default Home
+  return (
+    <>
+      <HeroSection />
+      <TopDishes />
+    </>
+  );
+};
+
+export default Home;
