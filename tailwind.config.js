@@ -30,6 +30,7 @@ module.exports = {
         auxiliary : '#ff9484',
         main : '#295147',
         'light-orange': '#fbf1f9',
+        'dark-orange': '#fa331e',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

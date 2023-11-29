@@ -23,7 +23,7 @@ const TopDishes = () => {
     <section className='py-10'>
         <div className="container">
             <h2 className='text-center text-main font-baskerville_b text-2xl mb-[5rem] md:text-4xl'>Experience The Great Food</h2>
-            <div className='flex flex-col items-center md:flex-row content-center md:items-center md:gap-10'>
+            <div className='flex flex-col items-center md:gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-10'>
                 {topDishes.length != 0 && topDishes.map(item => <DishCart dish={item}/>)}
             </div>
         </div>
