@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import FlyingButton from 'react-flying-item'
 import toast, { Toaster } from 'react-hot-toast'
 import axiosClient from '../../api/axios';
 import { Button } from '../../components/ui/button';
+import { motion } from 'framer-motion';
 import {
   Dialog,
   DialogContent,
@@ -19,7 +20,8 @@ const Menu = () => {
   const [menus, setMenus] = useState([]);
   const [Category, setCategory] = useState([]);
   const [sizes, setSizes] = useState([]);
-  console.log(menus);
+
+
   const getmenu = async (value) => {
     try {
       const response = await axiosClient.get('/api/menus');
@@ -39,18 +41,19 @@ const Menu = () => {
       <div>
         {
           Category.map((category, categoryId) => (
-            <div key={categoryId} className='container'>
+            <div key={categoryId} className='container mt-20'>
               <h1 className='text-2lg text-center font-baskerville_b text-[40px] mb-16 mt-10 text-auxiliary '>{category.type}</h1>
-              <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 place-items-center shadow-2xl'>
+              <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 place-items-center '>
                 {
                   menus.map((menu, id) => (
                     (menu.category_id === category.id) ? (
-                      <div key={id} className='w-[300px]   mb-10 bg-gradient-to-t from-lightGreen to-white rounded-lg flex flex-col items-center gap-2'>
-                        <img className='mt-[-50px] ' width={300} src={"http://localhost:8000/" + menu.image} alt="" />
+                      <motion.div initial={{ opacity: 0 }} transition={{duration:0.7}}
+                        whileInView={{ opacity: 1 }}  key={id} className='w-[300px]   mb-20 bg-gradient-to-t to-[#393e46] from-[#1f2326] rounded-lg flex flex-col items-center gap-2 text-white'>
+                        <img className='mt-[-80px]' width={300} src={"http://localhost:8000/" + menu.image} alt="" />
                         <p className='text-center'>{menu.name}</p>
                         <p className='text-center'>{menu.desc.slice(0, 100)}...</p>
                         {
-                          menu.sizes.length > 0 || menu.ingredients.length > 0  ? (
+                          menu.sizes.length > 0 || menu.ingredients.length > 0 ? (
                             <>
                               <Dialog>
                                 <DialogTrigger asChild><Button className='bg-button my-5'>Add to Cart {menu.price} $ (extra) </Button></DialogTrigger>
@@ -64,7 +67,6 @@ const Menu = () => {
                                   </DialogHeader>
                                 </DialogContent>
                               </Dialog>
-
                             </>
                           ) : (
                             <>
@@ -72,7 +74,7 @@ const Menu = () => {
                             </>
                           )
                         }
-                      </div>
+                      </motion.div>
                     ) : null
                   ))
                 }

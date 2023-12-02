@@ -45,9 +45,9 @@ const Register = () => {
   };
 
   return (
-    <section className="h-[90vh] flex items-center">
-      <div className="container text-center w-6/6 max-w-[35rem]">
-        <h2 className="font-baskerville_b text-4xl text-main mb-10">
+    <section className="h-screen flex items-center">
+      <div className="container text-center w-6/6 max-w-[35rem] mt-10">
+        <h2 className="font-baskerville_b text-4xl text-main mb-5">
           Register
         </h2>
         <form onSubmit={(e) => onRegister(e)}>

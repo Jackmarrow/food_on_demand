@@ -34,7 +34,7 @@ const Login = ({ connectedUser, setConnectedUser }) => {
   return (
     <section
       onSubmit={(e) => onLogin(e)}
-      className="h-[90vh] flex items-center"
+      className="h-screen flex items-center"
     >
       <div className="container text-center min-w-[23rem] w-2/6">
         <h2 className="font-baskerville_b text-4xl text-main mb-10">Login</h2>

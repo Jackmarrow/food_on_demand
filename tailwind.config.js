@@ -27,7 +27,7 @@ module.exports = {
         button:'#e63019',
         subtext : '#929ea2',
         lightGreen : '#dee3df',
-        auxiliary : '#ff9484',
+        auxiliary : '#f7480d',
         main : '#295147',
         'light-orange': '#fbf1f9',
         'dark-orange': '#fa331e',

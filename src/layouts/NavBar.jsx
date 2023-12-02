@@ -12,10 +12,10 @@ const NavBar = ({ connectedUser, setConnectedUser }) => {
   };
 
   return (
-    <nav className="z-10 font-montserrat flex py-5 h-16 fixed top-0 text-white w-full backdrop-blur-md" style={{backgroundColor: 'rgba(255, 255, 255, 0.5)'}}>
+    <nav className="z-10 font-montserrat flex py-5 h-16 fixed top-0 text-white w-full backdrop-blur-md" style={{backgroundColor: 'rgba(175, 175, 175, 0.2)'}}>
       <div className="container flex items-center justify-between">
         <div>
-          <Link to={"/"} className="font-montserrat_b fs text-3xl">Foo<span className="text-main">dy</span></Link>
+          <Link to={"/"} className="font-montserrat_b fs text-3xl">Foo<span className=" text-auxiliary">dy</span></Link>
         </div>
         <ul className="hidden md:flex">
           <li className="mx-6">
