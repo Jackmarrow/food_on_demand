@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import FlyingButton from 'react-flying-item'
-import toast, { Toaster } from 'react-hot-toast'
+import toast from 'react-hot-toast'
 import axiosClient from '../../api/axios';
 import { Button } from '../../components/ui/button';
 import { motion } from 'framer-motion';
@@ -13,14 +13,24 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import MenuSize from './components/MenuSize';
+import { Context } from '../../App';
 const notify = () => toast.success('Here is your toast.');
 
 
 const Menu = () => {
+  const data = useContext(Context);
   const [menus, setMenus] = useState([]);
   const [Category, setCategory] = useState([]);
   const [sizes, setSizes] = useState([]);
 
+
+
+   //HANDLE CONNECTED USER ORDER
+   const handleOrder = (dish) =>{
+    data.addToBasket(dish);
+    notify();
+    console.log('ITEM ADDED');
+};
 
   const getmenu = async (value) => {
     try {
@@ -34,7 +44,7 @@ const Menu = () => {
   }
   useEffect(() => {
     getmenu();
-  }, [])
+  }, []);
 
   return (
     <>
@@ -70,7 +80,7 @@ const Menu = () => {
                             </>
                           ) : (
                             <>
-                              <FlyingButton targetLeft={'90%'} src={["http://localhost:8000/" + menu.image]} ><Button onClick={notify} className='bg-button my-5'>Add to Cart {menu.price} $</Button></FlyingButton>
+                              <FlyingButton targetLeft={'90%'} src={["http://localhost:8000/" + menu.image]} ><Button onClick={() => handleOrder(menu)} className='bg-button my-5'>Add to Cart {menu.price} $</Button></FlyingButton>
                             </>
                           )
                         }
@@ -79,7 +89,6 @@ const Menu = () => {
                   ))
                 }
               </div>
-              <Toaster />
             </div>
           ))
         }

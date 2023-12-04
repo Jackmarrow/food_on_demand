@@ -1,9 +1,9 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import HeroSection from "./components/HeroSection";
 import TopDishes from "./components/TopDishes";
 
 const Home = () => {
+
 
   return (
     <>

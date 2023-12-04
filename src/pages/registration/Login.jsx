@@ -1,9 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import axiosClient from "../../api/axios";
 import { useNavigate } from "react-router-dom";
+import { Context } from "../../App";
 
-const Login = ({ connectedUser, setConnectedUser }) => {
+const Login = () => {
+
+  const data = useContext(Context);
+
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -19,7 +23,7 @@ const Login = ({ connectedUser, setConnectedUser }) => {
       await axiosClient.get("/sanctum/csrf-cookie");
       await axiosClient.post("/login", user);
       const response = await axiosClient.get("/api/connected_user");
-      setConnectedUser(response.data.name);
+      data.setConnectedUser(response.data);
       setUser({
         email: "",
         password: "",

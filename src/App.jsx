@@ -8,28 +8,47 @@ import Contact from "./pages/contact/Contact";
 import NavBar from "./layouts/NavBar";
 import Login from "./pages/registration/Login";
 import Register from "./pages/registration/Register";
+import Basket from "./pages/basket/Basket";
+import axiosClient from "./api/axios";
+import { Toaster } from "react-hot-toast";
+import { createContext } from "react";
 // import "./App.css";
 
-const App = ()=>{
+//CONTEXT PROVIDER
+export const Context = createContext();
 
+const App = () => {
   const [connectedUser, setConnectedUser] = useState(null);
 
+  //ADD TO BASKET
+  const addToBasket = async (dish) => {
+    const item = {
+      user_id: connectedUser.id,
+      menu_id: dish.id,
+    };
+
+    await axiosClient.post(`/api/cart/add_item`, item);
+  };
+
   return (
-    <>
-      <NavBar connectedUser={connectedUser} setConnectedUser={setConnectedUser}/>
+    <Context.Provider value={{ connectedUser, setConnectedUser, addToBasket }}>
+      <NavBar />
+      {/* TOASTER MESSAGE */}
+      <Toaster />
+      {/* END OFTOASTER MESSAGE */}
       {/* /==================== ROUTES===================== */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login connectedUser={connectedUser} setConnectedUser={setConnectedUser}/>} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/cart" element={<Basket />} />
       </Routes>
       {/* /================================================== */}
-    </>
+    </Context.Provider>
   );
+};
 
-}
-
-export default App
+export default App;

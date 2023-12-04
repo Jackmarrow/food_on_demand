@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import HeroImage from "../../../assets/img/herosection-image.jpg";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+
+
 const HeroSection = () => {
+
+
   return (
     <section
       className="h-full bg-cover bg-fixed"
       style={{ backgroundImage: `url(${HeroImage})` }}
     >
       <div className="w-full bg-gradient-to-r from-black via-black">
-        <div className="container text-white pt-16 text-center md:text-left">
+        <div className="container text-white py-16 text-center md:text-left">
           <h1 className="text-3xl leading-loose font-baskerville mb-7 mt-10 md:text-5xl md:leading-[5rem]">
             Everything is <br /> Better With a
             <span className="text-dark-orange"> Pizza</span>
@@ -28,19 +32,20 @@ const HeroSection = () => {
             obcaecati voluptates officiis culpa labore non corrupti iste?
           </p>
           <div className="font-montserrat_b flex flex-col items-center md:flex-row md:items-center md:gap-10 md:max-w-max">
-            <button
-              type="button"
-              className="group transition-all ease-in-out duration-300 flex items-center border-2 text-l rounded-full px-4 py-2 mb-4 hover:bg-dark-orange hover:border-transparent md:mb-0"
-            >
-              <Link to={"/menu"}>ORDER NOW</Link>{" "}
-              <FaArrowRight className="hidden ms-3 group-hover:block" />
-            </button>
+            <Link to={"/menu"}>
+              <button
+                type="button"
+                className="group transition-all ease-in-out duration-300 flex items-center border-2 text-l rounded-full px-4 py-2 mb-4 hover:bg-dark-orange hover:border-transparent md:mb-0"
+              >
+                ORDER NOW
+                <FaArrowRight className="hidden ms-3 group-hover:block" />
+              </button>
+            </Link>
             <button
               type="button"
               className="text-xl hover:underline underline-offset-8"
             >
-              {" "}
-              Learn more{" "}
+              Learn more
             </button>
           </div>
         </div>
